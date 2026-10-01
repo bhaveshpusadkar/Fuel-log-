@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fuel Log</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>🚗 Fuel Log</h1>
+    <p>Vehicle Fuel & Mileage Tracking System</p>
+</header>
+
+<div class="container">
+
+    <div class="form-box">
+
+        <h2>Add Fuel Entry</h2>
+
+        <div class="form-grid">
+
+            <div>
+                <label>Vehicle Name</label>
+                <input type="text" id="vehicle"
+                       placeholder="Honda Activa">
+            </div>
+
+            <div>
+                <label>Date</label>
+                <input type="date" id="date">
+            </div>
+
+            <div>
+                <label>Current KM Reading</label>
+                <input type="number" id="km"
+                       placeholder="12500">
+            </div>
+
+            <div>
+                <label>Petrol Litres</label>
+                <input type="number" id="litres"
+                       step="0.01"
+                       placeholder="5">
+            </div>
+
+            <div>
+                <label>Petrol Price / Litre ₹</label>
+                <input type="number" id="price"
+                       step="0.01"
+                       placeholder="105">
+            </div>
+
+        </div>
+
+        <button onclick="addFuel()">
+            Add Fuel Record
+        </button>
+
+        <div id="warning" class="warning"></div>
+
+    </div>
+
+
+    <div class="dashboard">
+
+        <div class="card">
+            <h3>Total Money Spent</h3>
+            <p>₹<span id="totalMoney">0</span></p>
+        </div>
+
+        <div class="card">
+            <h3>Average Mileage</h3>
+            <p><span id="averageMileage">0</span> km/L</p>
+        </div>
+
+        <div class="card">
+            <h3>Best Mileage</h3>
+            <p class="best">
+                <span id="bestMileage">0</span> km/L
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Worst Mileage</h3>
+            <p class="worst">
+                <span id="worstMileage">0</span> km/L
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="table-box">
+
+        <h2>Fuel Records</h2>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Vehicle</th>
+                    <th>Date</th>
+                    <th>KM</th>
+                    <th>Litres</th>
+                    <th>Price/L</th>
+                    <th>Cost</th>
+                    <th>Mileage</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="fuelTable"></tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
